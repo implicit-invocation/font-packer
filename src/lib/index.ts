@@ -156,8 +156,6 @@ export const packFont = async (
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
-  document.body.appendChild(canvas);
-
   // TODO: handle multipage?
   project.glyphList
     .filter((glyph) => !!glyph)
