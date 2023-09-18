@@ -26,7 +26,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "prepare": "tsc"
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@types/opentype.js": "^1.3.5",
