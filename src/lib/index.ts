@@ -54,7 +54,7 @@ export const defaultConfig: FontConfig = {
 
   size: 64,
   lineHeight: 64,
-  sharp: 80,
+  sharp: 50,
 
   autoSize: true,
   fixedSize: false,
