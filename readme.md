@@ -33,3 +33,45 @@ console.log(toBmfString(info));
 // get the bmfont data in json format
 console.log(JSON.stringify(info, null, 2))
 ```
+
+For the font config, refer to this interface:
+
+```Typescript
+export interface FontConfig {
+  name: string;
+  text: string;
+
+  size: number;
+  lineHeight: number;
+  sharp: number;
+
+  padding: number;
+  spacing: number;
+  autoSize: boolean;
+  fixedSize: boolean;
+  maxWidth: number;
+  maxHeight: number;
+
+  xAdvance: number;
+  xOffset: number;
+  yOffset: number;
+
+  fill: string;
+
+  stroke?: {
+    width: number;
+    fill: string;
+    lineCap: CanvasLineCap;
+    lineJoin: CanvasLineJoin;
+  };
+
+  shadow?: {
+    offsetX: number;
+    offsetY: number;
+    blur: number;
+    fill: string;
+  };
+
+  backgroundColor: string | undefined;
+}
+```
