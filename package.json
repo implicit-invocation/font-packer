@@ -5,6 +5,10 @@
     "name": "implicit-invocation",
     "email": "tao@dongbat.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/implicit-invocation/font-packer.git"
+  },
   "type": "module",
   "files": [
     "dist"
