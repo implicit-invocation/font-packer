@@ -1,7 +1,10 @@
 import { packFont, toBmfString } from "./lib";
 
 const run = async () => {
-  const { info, textureData } = await packFont("./JOMHURIA-REGULAR.TTF", {
+  const buffer = await fetch("./JOMHURIA-REGULAR.TTF").then((res) =>
+    res.arrayBuffer()
+  );
+  const { info, textureData } = await packFont(buffer, {
     name: "jomhuria",
     size: 72,
     padding: 1,

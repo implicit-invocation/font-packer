@@ -73,7 +73,7 @@ export const toBmfString = (info: BMFont): string => {
 };
 
 export const packFont = async (
-  trueTypeUrl?: string,
+  trueTypeUrl?: string | ArrayBuffer,
   config?: Partial<FontConfig>
 ): Promise<{
   textureData: {
@@ -136,8 +136,12 @@ export const packFont = async (
   }
 
   if (trueTypeUrl) {
-    const buffer = await fetch(trueTypeUrl).then((res) => res.arrayBuffer());
-    await project.style.font.addFont(buffer);
+    if (typeof trueTypeUrl === "string") {
+      const buffer = await fetch(trueTypeUrl).then((res) => res.arrayBuffer());
+      await project.style.font.addFont(buffer);
+    } else {
+      await project.style.font.addFont(trueTypeUrl);
+    }
   }
   project.packStyle();
 
